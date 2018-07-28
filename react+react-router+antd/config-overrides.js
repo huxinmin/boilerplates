@@ -2,7 +2,10 @@ const { injectBabelPlugin } = require('react-app-rewired');
 const rewireLess = require('react-app-rewire-less');
 
 module.exports = function override(config, env) {
-  config = injectBabelPlugin(['import', { libraryName: 'antd', style: 'css' }], config);
-  config = rewireLess.withLoaderOptions()(config, env);
+  config = injectBabelPlugin(['import', { libraryName: 'antd', style: true }], config);
+  config = rewireLess.withLoaderOptions({
+    	javascriptEnabled: true,     
+    	modifyVars: { "@icon-url": "/fonts/iconfont" },  
+    })(config, env);
   return config;
 };

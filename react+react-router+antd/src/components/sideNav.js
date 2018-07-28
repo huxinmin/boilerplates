@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, Icon, Button } from 'antd';
 
 import Routes from '../utils/routes';
+import { history } from '../utils';
 
 export default class SideNav extends Component{
 	state = {
@@ -28,7 +29,7 @@ export default class SideNav extends Component{
 							(item, index)=> (
 								<Menu.Item key={index}>
 									<Icon type="pie-chart" />
-									<Link replace  to={item.path}>{item.name}</Link> 
+									<Link replace={item.path === history.location.pathname}  to={item.path}>{item.name}</Link> 
 								</Menu.Item>
 						)) 
 					}
