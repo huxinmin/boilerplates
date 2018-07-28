@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import { Router, Route } from "react-router-dom";
 
-import './index.css';
+import './index.less';
 import { getLoggedIn, history } from './utils';
 import { Home, Login } from './components/loadable';
 
